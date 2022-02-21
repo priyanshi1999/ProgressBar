@@ -11,22 +11,36 @@
     <div class="borderProgress">
         <div class="progressBar" id="progressId"></div>
     </div>
-    <div class="progressText" id="counter">20</div>
-    <div class="divButton">
-        <button class="clickMe" onclick="move()">CLICK ME</button>
+    <!-- <div class="progressText" id="counter">20</div> -->
+
+    <div class="photosText" id="photosTextId"> Added 
+        <span id="noUploaded">0</span> of 10 photos 
     </div>
+
+    <div class="divButton">
+        <button class="uploadPhoto" id="buttonId" onclick="move()">UPLOAD PHOTOS</button>
+    </div>
+
     <script>
         function move(){
-            var counter= document.getElementById("counter");
+            var noImgUploaded= document.getElementById("noUploaded");
             var widthElement= document.getElementById("progressId");
-            let count= counter.innerText;
+            var photoText= document.getElementById("photosTextId");
+            var buttonDisable= document.getElementById("buttonId");
+            let count= noImgUploaded.innerText;
             setInterval( () => {
-                if(count < 100){
+                if(count < 10){
                     count++;
-                    counter.innerText= count+"%";
-                    widthElement.style.width= count+"%";
+                    noImgUploaded.innerText= count;
+                    widthElement.style.width= (count*10)+"%";
+                    buttonDisable.disabled=true;
                 }
-            } ,1);
+                if(count==10){
+                    photoText.innerText= "Successfully uploaded 10 images!!";
+                    photoText.style.color= "#008000";
+                    buttonDisable.disabled=false;
+                }
+            } ,100);
         }
     </script>
 </body>
