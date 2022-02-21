@@ -1,0 +1,24 @@
+/* No CSS *//*# sourceMappingURL=style.css.map */
+.progressBar{
+    height:24px;
+    width:20%;
+    background: green;
+    color: white;
+    text-align: center;
+    border-radius: 0.5em;
+}
+.progressText{
+    font-weight: bold;
+    color: black;
+    margin: 1em;
+}
+.borderProgress{
+    background: lightgray;
+    border-radius: 0.5em;
+    margin: 1em;
+}
+.clickMe{
+    font-weight: bold;
+    margin: 1em;
+    margin: 1em;
+}

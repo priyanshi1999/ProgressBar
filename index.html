@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Progress Bar</title>
+</head>
+<body>
+    <div class="borderProgress">
+        <div class="progressBar" id="progressId"></div>
+    </div>
+    <div class="progressText" id="counter">20</div>
+    <div class="divButton">
+        <button class="clickMe" onclick="move()">CLICK ME</button>
+    </div>
+    <script>
+        function move(){
+            var counter= document.getElementById("counter");
+            var widthElement= document.getElementById("progressId");
+            let count= counter.innerText;
+            setInterval( () => {
+                if(count < 100){
+                    count++;
+                    counter.innerText= count+"%";
+                    widthElement.style.width= count+"%";
+                }
+            } ,1);
+        }
+    </script>
+</body>
+</html>
